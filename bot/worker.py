@@ -63,7 +63,7 @@ async def dl_link(event):
     es = dt.now()
     kk = dl.split("/")[-1]
     aa = kk.split(".")[-1]
-    rr = "encode"
+    rr = "downloads"
     bb = kk.replace(f".{aa}", " [CBZ].mkv")
     out = f"{rr}/{bb}"
     thum = "thumb.jpg"
@@ -209,7 +209,7 @@ async def encod(event):
         es = dt.now()
         kk = dl.split("/")[-1]
         aa = kk.split(".")[-1]
-        rr = f"encode"
+        rr = f"downloads"
         bb = kk.replace(f".{aa}", " [CBZ].mkv")
         out = f"{rr}/{bb}"
         thum = "thumb.jpg"
