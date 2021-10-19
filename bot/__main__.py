@@ -165,7 +165,7 @@ async def something():
                 kk = dl.split("/")[-1]
                 aa = kk.split(".")[-1]
                 rr = "downloads"
-                bb = kk.replace(f".{aa}", " [HEVC].mkv")
+                bb = kk.replace(f".{aa}"," [HEVC].mkv")
                 out = f"{rr}/{bb}"
                 thum = "thumb.jpg"
                 dtime = ts(int((es - s).seconds) * 1000)
