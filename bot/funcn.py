@@ -186,7 +186,7 @@ async def skip(e):
 async def renew(e):
     if str(e.sender_id) not in OWNER:
         return
-    await e.reply("**Cleared Queued, Working Files and Cached Downloads!**")
+    await e.reply("**Cleared Queued, Working Files and Cached Downloads!😙❤️**")
     WORKING.clear()
     QUEUE.clear()
     os.system("rm -rf downloads/*")
