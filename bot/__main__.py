@@ -222,7 +222,7 @@ async def something():
                 a1 = await info(dl, e)
                 a2 = await info(out, e)
                 dk = await ds.reply(
-                    f"**➩ ●Original File Size :** {hbs(org)}\n**➩ ●●Compressed File Size :** {hbs(com)}\n**➩ ●Compressed File Percentage :** {per}\n\n**➩ ●Get Mediainfo here :** [Before]({a1})/[After]({a2})\n\n●Downloaded in {x}\n\n●Compressed in {xx}\n\nUploaded in {xxx}",
+                    f"**●Original File Size :** {hbs(org)}\n**●Compressed File Size :** {hbs(com)}\n**●Compressed File Percentage :** {per}\n\n**●Get Mediainfo here :** [Before]({a1})/[After]({a2})\n\n●Downloaded in : {x}\n●Compressed in : {xx}\nUploaded in : {xxx}",
                     link_preview=False,
                 )
                 QUEUE.pop(list(QUEUE.keys())[0])
