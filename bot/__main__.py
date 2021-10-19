@@ -164,7 +164,7 @@ async def something():
                 es = dt.now()
                 kk = dl.split("/")[-1]
                 aa = kk.split(".")[-1]
-                rr = "encode"
+                rr = "downloads"
                 bb = kk.replace(f".{aa}", " [HEVC].mkv")
                 out = f"{rr}/{bb}"
                 thum = "thumb.jpg"
