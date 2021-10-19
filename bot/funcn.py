@@ -18,8 +18,8 @@ os.system(f"wget {THUMB} -O thumb.jpg")
 
 if not os.path.isdir("downloads/"):
     os.mkdir("downloads/")
-if not os.path.isdir("encode/"):
-    os.mkdir("encode/")
+if not os.path.isdir("downloads/"):
+    os.mkdir("downloads/")
 if not os.path.isdir("thumb/"):
     os.mkdir("thumb/")
 
@@ -169,7 +169,7 @@ async def skip(e):
             QUEUE.pop(int(id))
         await e.delete()
         os.system("rm -rf downloads/*")
-        os.system("rm -rf encode/*")
+        os.system("rm -rf downloads/*")
 #        os.remove(dl)
 #        os.remove(out)
         for proc in psutil.process_iter(): #Lets kill ffmpeg else it will run in memory even after deleting input.
@@ -190,7 +190,7 @@ async def renew(e):
     WORKING.clear()
     QUEUE.clear()
     os.system("rm -rf downloads/*")
-    os.system("rm -rf encode/*")
+    os.system("rm -rf downloads/*")
     for proc in psutil.process_iter():
         processName = proc.name()
         processID = proc.pid
