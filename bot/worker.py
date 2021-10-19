@@ -31,7 +31,7 @@ async def stats(e):
     except Exception as er:
         LOGS.info(er)
         await e.answer(
-            "Someting Went Wrong.\nSend Media Again.", cache_time=0, alert=True
+            "Someting Went Wrong.\nSend Media Again.😕💔", cache_time=0, alert=True
         )
 
 
@@ -50,10 +50,10 @@ async def dl_link(event):
         return
     if WORKING or QUEUE:
         QUEUE.update({link: name})
-        return await event.reply(f"**✅ Added {link} in QUEUE**")
+        return await event.reply(f"**✅ Added {link} in QUEUE😙❤️**")
     WORKING.append(1)
     s = dt.now()
-    xxx = await event.reply("**📥Downloading...😙❤️**")
+    xxx = await event.reply("**Downloading...😙❤️**")
     try:
         dl = await fast_download(xxx, link, name)
     except Exception as er:
@@ -71,7 +71,7 @@ async def dl_link(event):
     hehe = f"{out};{dl};0"
     wah = code(hehe)
     nn = await xxx.edit(
-        "**🗜Compressing...😙❤️**",
+        "**Compressing...😙❤️**",
         buttons=[
             [Button.inline("STATS", data=f"stats{wah}")],
             [Button.inline("CANCEL", data=f"skip{wah}")],
@@ -95,14 +95,14 @@ async def dl_link(event):
     ees = dt.now()
     ttt = time.time()
     await nn.delete()
-    nnn = await xxx.client.send_message(xxx.chat_id, "**📤Uploading...😙❤️**")
+    nnn = await xxx.client.send_message(xxx.chat_id, "**Uploading...😙❤️**")
     with open(out, "rb") as f:
         ok = await upload_file(
             client=xxx.client,
             file=f,
             name=out,
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                progress(d, t, nnn, ttt, "**📤Uploading...😙❤️**")
+                progress(d, t, nnn, ttt, "**Uploading...😙❤️**")
             ),
         )
     ds = await xxx.client.send_file(
@@ -120,7 +120,7 @@ async def dl_link(event):
     a1 = await info(dl, xxx)
     a2 = await info(out, xxx)
     dk = await ds.reply(
-        f"**➩ ●Original File Size :** {hbs(org)}\n**➩ ●Compressed File Size :** {hbs(com)}\n**➩ ●Compressed File Percentage :** {per}\n\n**➩ ●Get Mediainfo here :** [Before]({a1})/[After]({a2})\n\n●Downloaded in {x}\n\n●Compressed in {xx}\n\n●Uploaded in {xxx}",
+        f"**●Original File Size :** {hbs(org)}\n**●Compressed File Size :** {hbs(com)}\n**●Compressed File Percentage :** {per}\n\n**●Get Mediainfo here :** [Before]({a1})/[After]({a2})\n\n●Downloaded in : {x}\n●Compressed in : {xx}\n●Uploaded in : {xxx}",
         link_preview=False,
     )
     os.remove(dl)
@@ -137,7 +137,7 @@ async def encod(event):
             return
         event.sender
         if str(event.sender_id) not in OWNER and event.sender_id !=DEV:
-            return await event.reply("**Sorry You're not An Authorised User!**")
+            return await event.reply("**Sorry You're not An Authorised User!😕💔**")
         if not event.media:
             return
         if hasattr(event.media, "document"):
@@ -168,7 +168,7 @@ async def encod(event):
                 "**Added This File in Queue😙❤️**"
             )
         WORKING.append(1)
-        xxx = await event.reply("**📥Downloading...😙❤️**")
+        xxx = await event.reply("**Downloading...😙❤️**")
         s = dt.now()
         ttt = time.time()
         dir = f"downloads/"
@@ -190,7 +190,7 @@ async def encod(event):
                                 t,
                                 xxx,
                                 ttt,
-                                "**📥Downloading...😙❤️**",
+                                "**Downloading...😙❤️**",
                             )
                         ),
                     )
@@ -199,7 +199,7 @@ async def encod(event):
                     event.media,
                     dir,
                     progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                        progress(d, t, xxx, ttt, "**📥Downloading...😙❤️**")
+                        progress(d, t, xxx, ttt, "**Downloading...😙❤️**")
                     ),
                 )
         except Exception as er:
@@ -218,7 +218,7 @@ async def encod(event):
         hehe = f"{out};{dl};0"
         wah = code(hehe)
         nn = await e.edit(
-            "**🗜Compressing...😙❤️**",
+            "**Compressing...😙❤️**",
             buttons=[
                 [Button.inline("STATS", data=f"stats{wah}")],
                 [Button.inline("CANCEL", data=f"skip{wah}")],
@@ -242,14 +242,14 @@ async def encod(event):
         ees = dt.now()
         ttt = time.time()
         await nn.delete()
-        nnn = await e.client.send_message(e.chat_id, "**📤Uploading...😙❤️**")
+        nnn = await e.client.send_message(e.chat_id, "**Uploading...😙❤️**")
         with open(out, "rb") as f:
             ok = await upload_file(
                 client=e.client,
                 file=f,
                 name=out,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, nnn, ttt, "**📤Uploading...😙❤️**")
+                    progress(d, t, nnn, ttt, "**Uploading...😙❤️**")
                 ),
             )
         ds = await e.client.send_file(
@@ -267,7 +267,7 @@ async def encod(event):
         a1 = await info(dl, e)
         a2 = await info(out, e)
         dk = await ds.reply(
-            f"**➩ ●Original File Size :** {hbs(org)}\n**➩ ●Compressed File Size :** {hbs(com)}\n**➩ ●Compressed File Percentage :** {per}\n\n**➩ ●Get Mediainfo here :** [Before]({a1})/[After]({a2})\n\n●Downloaded in {x}\n\n●Compressed in {xx}\n\n●Uploaded in {xxx}",
+            f"**●Original File Size :** {hbs(org)}\n**●Compressed File Size :** {hbs(com)}\n**●Compressed File Percentage :** {per}\n\n**●Get Mediainfo here :** [Before]({a1})/[After]({a2})\n\n●Downloaded in : {x}\n●Compressed in : {xx}\n●Uploaded in : {xxx}",
             link_preview=False,
         )
         os.remove(dl)
