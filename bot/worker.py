@@ -53,7 +53,7 @@ async def dl_link(event):
         return await event.reply(f"**✅ Added {link} in QUEUE**")
     WORKING.append(1)
     s = dt.now()
-    xxx = await event.reply("**📥 Downloading...**")
+    xxx = await event.reply("**📥Downloading...😙❤️**")
     try:
         dl = await fast_download(xxx, link, name)
     except Exception as er:
@@ -64,20 +64,20 @@ async def dl_link(event):
     kk = dl.split("/")[-1]
     aa = kk.split(".")[-1]
     rr = "downloads"
-    bb = kk.replace(f".{aa}", " [CBZ].mkv")
+    bb = kk.replace(f".{aa}", " [HEVC].mkv")
     out = f"{rr}/{bb}"
     thum = "thumb.jpg"
     dtime = ts(int((es - s).seconds) * 1000)
     hehe = f"{out};{dl};0"
     wah = code(hehe)
     nn = await xxx.edit(
-        "**🗜 Compressing...**",
+        "**🗜Compressing...😙❤️**",
         buttons=[
             [Button.inline("STATS", data=f"stats{wah}")],
             [Button.inline("CANCEL", data=f"skip{wah}")],
         ],
     )
-    ffmpegcode.append("-preset faster -c:v libx265 -s 854x480 -x265-params 'bframes=8:psy-rd=1:ref=3:aq-mode=3:aq-strength=0.8:deblock=1,1' -pix_fmt yuv420p -crf 30 -c:a libopus -b:a 32k -c:s copy -map 0 -ac 2  -ab 32k  -vbr 2 -level 3.1")
+    ffmpegcode.append("-preset fast -c:v libx265 -s 854x480 -x265-params 'bframes=8:psy-rd=1:ref=3:aq-mode=3:aq-strength=0.8:deblock=1,1' -pix_fmt yuv420p -crf 29 -c:a libopus -b:a 32k -c:s copy -map 0 -ac 2  -ab 32k  -vbr 2 -level 3.1")
     cmd = f"""ffmpeg -i '{dl}' {ffmpegcode[0]} '{out}' -y"""
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
@@ -95,14 +95,14 @@ async def dl_link(event):
     ees = dt.now()
     ttt = time.time()
     await nn.delete()
-    nnn = await xxx.client.send_message(xxx.chat_id, "**📤 Uploading...**")
+    nnn = await xxx.client.send_message(xxx.chat_id, "**📤Uploading...😙❤️**")
     with open(out, "rb") as f:
         ok = await upload_file(
             client=xxx.client,
             file=f,
             name=out,
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                progress(d, t, nnn, ttt, "**📤 Uploading...**")
+                progress(d, t, nnn, ttt, "**📤Uploading...😙❤️**")
             ),
         )
     ds = await xxx.client.send_file(
@@ -120,7 +120,7 @@ async def dl_link(event):
     a1 = await info(dl, xxx)
     a2 = await info(out, xxx)
     dk = await ds.reply(
-        f"**➩ Original File Size :** {hbs(org)}\n**➩ Encoded File Size :** {hbs(com)}\n**➩ Encoded File Percentage :** {per}\n\n**➩ Get Mediainfo here :** [Before]({a1})/[After]({a2})\n\n__Downloaded in {x}\nEncoded in {xx}\nUploaded in {xxx}__",
+        f"**➩ ●Original File Size :** {hbs(org)}\n**➩ ●Compressed File Size :** {hbs(com)}\n**➩ ●Compressed File Percentage :** {per}\n\n**➩ ●Get Mediainfo here :** [Before]({a1})/[After]({a2})\n\n●Downloaded in {x}\n\n●Compressed in {xx}\n\n●Uploaded in {xxx}",
         link_preview=False,
     )
     os.remove(dl)
@@ -151,24 +151,24 @@ async def encod(event):
             oc = event.fwd_from.from_id.user_id
             occ = (await event.client.get_me()).id
             if oc == occ:
-                return await event.reply("**This Video is already Compressed.**")
+                return await event.reply("**This Video is already Compressed.😕💔**")
         except BaseException:
             pass
         if WORKING or QUEUE:
-            xxx = await event.reply("**Adding To Queue...**")
+            xxx = await event.reply("**Adding To Queue...😙❤️**")
             # id = pack_bot_file_id(event.media)
             doc = event.media.document
             if doc.id in list(QUEUE.keys()):
-                return await xxx.edit("**This File is Already Added in Queue**")
+                return await xxx.edit("**This File is Already Added in Queue😕💔**")
             name = event.file.name
             if not name:
                 name = "video_" + dt.now().isoformat("_", "seconds") + ".mp4"
             QUEUE.update({doc.id: [name, doc]})
             return await xxx.edit(
-                "**Added This File in Queue**"
+                "**Added This File in Queue😙❤️**"
             )
         WORKING.append(1)
-        xxx = await event.reply("**📥 Downloading...**")
+        xxx = await event.reply("**📥Downloading...😙❤️**")
         s = dt.now()
         ttt = time.time()
         dir = f"downloads/"
@@ -190,7 +190,7 @@ async def encod(event):
                                 t,
                                 xxx,
                                 ttt,
-                                "**📥 Downloading...**",
+                                "**📥Downloading...😙❤️**",
                             )
                         ),
                     )
@@ -199,7 +199,7 @@ async def encod(event):
                     event.media,
                     dir,
                     progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                        progress(d, t, xxx, ttt, "**📥 Downloading...**")
+                        progress(d, t, xxx, ttt, "**📥Downloading...😙❤️**")
                     ),
                 )
         except Exception as er:
@@ -210,7 +210,7 @@ async def encod(event):
         kk = dl.split("/")[-1]
         aa = kk.split(".")[-1]
         rr = f"downloads"
-        bb = kk.replace(f".{aa}", " [CBZ].mkv")
+        bb = kk.replace(f".{aa}", " [HEVC].mkv")
         out = f"{rr}/{bb}"
         thum = "thumb.jpg"
         dtime = ts(int((es - s).seconds) * 1000)
@@ -218,13 +218,13 @@ async def encod(event):
         hehe = f"{out};{dl};0"
         wah = code(hehe)
         nn = await e.edit(
-            "**🗜 Compressing...**",
+            "**🗜Compressing...😙❤️**",
             buttons=[
                 [Button.inline("STATS", data=f"stats{wah}")],
                 [Button.inline("CANCEL", data=f"skip{wah}")],
             ],
         )
-        ffmpegcode.append("-preset faster -c:v libx265 -s 854x480 -x265-params 'bframes=8:psy-rd=1:ref=3:aq-mode=3:aq-strength=0.8:deblock=1,1' -pix_fmt yuv420p -crf 30 -c:a libopus -b:a 32k -c:s copy -map 0 -ac 2  -ab 32k  -vbr 2 -level 3.1")
+        ffmpegcode.append("-preset fast -c:v libx265 -s 854x480 -x265-params 'bframes=8:psy-rd=1:ref=3:aq-mode=3:aq-strength=0.8:deblock=1,1' -pix_fmt yuv420p -crf 29 -c:a libopus -b:a 32k -c:s copy -map 0 -ac 2  -ab 32k  -vbr 2 -level 3.1")
         cmd = f"""ffmpeg -i '{dl}' {ffmpegcode[0]} '{out}' -y"""
         process = await asyncio.create_subprocess_shell(
             cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
@@ -242,14 +242,14 @@ async def encod(event):
         ees = dt.now()
         ttt = time.time()
         await nn.delete()
-        nnn = await e.client.send_message(e.chat_id, "**📤 Uploading...**")
+        nnn = await e.client.send_message(e.chat_id, "**📤Uploading...😙❤️**")
         with open(out, "rb") as f:
             ok = await upload_file(
                 client=e.client,
                 file=f,
                 name=out,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, nnn, ttt, "**📤 Uploading...**")
+                    progress(d, t, nnn, ttt, "**📤Uploading...😙❤️**")
                 ),
             )
         ds = await e.client.send_file(
@@ -267,7 +267,7 @@ async def encod(event):
         a1 = await info(dl, e)
         a2 = await info(out, e)
         dk = await ds.reply(
-            f"**➩ Original File Size :** {hbs(org)}\n**➩ Encoded File Size :** {hbs(com)}\n**➩ Encoded File Percentage :** {per}\n\n**➩ Get Mediainfo here :** [Before]({a1})/[After]({a2})\n\n__Downloaded in {x}\nEncoded in {xx}\nUploaded in {xxx}__",
+            f"**➩ ●Original File Size :** {hbs(org)}\n**➩ ●Compressed File Size :** {hbs(com)}\n**➩ ●Compressed File Percentage :** {per}\n\n**➩ ●Get Mediainfo here :** [Before]({a1})/[After]({a2})\n\n●Downloaded in {x}\n\n●Compressed in {xx}\n\n●Uploaded in {xxx}",
             link_preview=False,
         )
         os.remove(dl)
