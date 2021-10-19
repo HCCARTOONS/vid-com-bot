@@ -17,70 +17,70 @@ except Exception as er:
 @bot.on(events.NewMessage(pattern="/start"))
 async def _(e):
     if str(e.sender_id) not in OWNER and e.sender_id !=DEV:
-        return e.reply("**Sorry You're not An Authorised User!**")
+        return e.reply("**Sorry You're not An Authorised User!😕💔**")
     await start(e)
 
 
 @bot.on(events.NewMessage(pattern="/setcode"))
 async def _(e):
     if str(e.sender_id) not in OWNER and e.sender_id !=DEV:
-        return e.reply("**Sorry You're not An Authorised User!**")
+        return e.reply("**Sorry You're not An Authorised User!😕💔**")
     await coding(e)
 
 
 @bot.on(events.NewMessage(pattern="/cmds"))
 async def _(e):
     if str(e.sender_id) not in OWNER and e.sender_id !=DEV:
-        return e.reply("**Sorry You're not An Authorised User!**")
+        return e.reply("**Sorry You're not An Authorised User!😕💔**")
     await zylern(e)
 
 
 @bot.on(events.NewMessage(pattern="/ping"))
 async def _(e):
     if str(e.sender_id) not in OWNER and e.sender_id !=DEV:
-        return e.reply("**Sorry You're not An Authorised User!**")
+        return e.reply("**Sorry You're not An Authorised User!😕💔**")
     await up(e)
 
 
 @bot.on(events.NewMessage(pattern="/sysinfo"))
 async def _(e):
     if str(e.sender_id) not in OWNER and e.sender_id !=DEV:
-        return e.reply("**Sorry You're not An Authorised User!**")
+        return e.reply("**Sorry You're not An Authorised User!😕💔**")
     await sysinfo(e)
 
 
 @bot.on(events.NewMessage(pattern="/leech"))
 async def _(e):
     if str(e.sender_id) not in OWNER and e.sender_id !=DEV:
-        return e.reply("**Sorry You're not An Authorised User!**")
+        return e.reply("**Sorry You're not An Authorised User!😕💔**")
     await dl_link(e)
 
 
 @bot.on(events.NewMessage(pattern="/help"))
 async def _(e):
     if str(e.sender_id) not in OWNER and e.sender_id !=DEV:
-        return e.reply("**Sorry You're not An Authorised User!**")
+        return e.reply("**Sorry You're not An Authorised User!😕💔**")
     await help(e)
 
 
 @bot.on(events.NewMessage(pattern="/renew"))
 async def _(e):
     if str(e.sender_id) not in OWNER and e.sender_id !=DEV:
-        return e.reply("**Sorry You're not An Authorised User!**")
+        return e.reply("**Sorry You're not An Authorised User!😕💔**")
     await renew(e)
 
 
 @bot.on(events.NewMessage(pattern="/clear"))
 async def _(e):
     if str(e.sender_id) not in OWNER and e.sender_id !=DEV:
-        return e.reply("**Sorry You're not An Authorised User!**")
+        return e.reply("**Sorry You're not An Authorised User!😕💔**")
     await clearqueue(e)
 
 
 @bot.on(events.NewMessage(pattern="/speed"))
 async def _(e):
     if str(e.sender_id) not in OWNER and e.sender_id !=DEV:
-        return e.reply("**Sorry You're not An Authorised User!**")
+        return e.reply("**Sorry You're not An Authorised User!😕💔**")
     await test(e)
     
     
@@ -131,7 +131,7 @@ async def something():
         try:
             if not WORKING and QUEUE:
                 user = int(OWNER.split()[0])
-                e = await bot.send_message(user, "**📥 Downloading Queue Files...**")
+                e = await bot.send_message(user, "**📥Downloading Queue Files...😙❤️**")
                 s = dt.now()
                 try:
                     if isinstance(QUEUE[list(QUEUE.keys())[0]], str):
@@ -153,7 +153,7 @@ async def something():
                                         t,
                                         e,
                                         tt,
-                                        "**📥 Downloading...**",
+                                        "**📥Downloading...😙❤️**",
                                     )
                                 ),
                             )
@@ -165,7 +165,7 @@ async def something():
                 kk = dl.split("/")[-1]
                 aa = kk.split(".")[-1]
                 rr = "encode"
-                bb = kk.replace(f".{aa}", " [CBZ].mkv")
+                bb = kk.replace(f".{aa}", " [HEVC].mkv")
                 out = f"{rr}/{bb}"
                 thum = "thumb.jpg"
                 dtime = ts(int((es - s).seconds) * 1000)
@@ -178,7 +178,7 @@ async def something():
                         [Button.inline("CANCEL", data=f"skip{wah}")],
                     ],
                 )
-                ffmpegcode.append("-preset faster -c:v libx265 -s 854x480 -x265-params 'bframes=8:psy-rd=1:ref=3:aq-mode=3:aq-strength=0.8:deblock=1,1' -pix_fmt yuv420p -crf 30 -c:a libopus -b:a 32k -c:s copy -map 0 -ac 2  -ab 32k  -vbr 2 -level 3.1")
+                ffmpegcode.append("-preset fast -c:v libx265 -s 854x480 -x265-params 'bframes=8:psy-rd=1:ref=3:aq-mode=3:aq-strength=0.8:deblock=1,1' -pix_fmt yuv420p -crf 29 -c:a libopus -b:a 32k -c:s copy -map 0 -ac 2  -ab 32k  -vbr 2 -level 3.1")
                 cmd = f"""ffmpeg -i '{dl}' {ffmpegcode[0]} '{out}' -y"""
                 process = await asyncio.create_subprocess_shell(
                     cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
@@ -197,14 +197,14 @@ async def something():
                 ees = dt.now()
                 ttt = time.time()
                 await nn.delete()
-                nnn = await e.client.send_message(e.chat_id, "**📤 Uploading...**")
+                nnn = await e.client.send_message(e.chat_id, "**📤Uploading...😙❤️**")
                 with open(out, "rb") as f:
                     ok = await upload_file(
                         client=e.client,
                         file=f,
                         name=out,
                         progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                            progress(d, t, nnn, ttt, "**📤 Uploading...**")
+                            progress(d, t, nnn, ttt, "**📤Uploading...😙❤️**")
                         ),
                     )
                 ds = await e.client.send_file(
@@ -222,7 +222,7 @@ async def something():
                 a1 = await info(dl, e)
                 a2 = await info(out, e)
                 dk = await ds.reply(
-                    f"**➩ Original File Size :** {hbs(org)}\n**➩ Encoded File Size :** {hbs(com)}\n**➩ Encoded File Percentage :** {per}\n\n**➩ Get Mediainfo here :** [Before]({a1})/[After]({a2})\n\n__Downloaded in {x}\nEncoded in {xx}\nUploaded in {xxx}__",
+                    f"**➩ ●Original File Size :** {hbs(org)}\n**➩ ●●Compressed File Size :** {hbs(com)}\n**➩ ●Compressed File Percentage :** {per}\n\n**➩ ●Get Mediainfo here :** [Before]({a1})/[After]({a2})\n\n●Downloaded in {x}\n\n●Compressed in {xx}\n\nUploaded in {xxx}",
                     link_preview=False,
                 )
                 QUEUE.pop(list(QUEUE.keys())[0])
