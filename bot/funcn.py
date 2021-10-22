@@ -16,10 +16,10 @@ OK = {}
 uptime = dt.now()
 os.system(f"wget {THUMB} -O thumb.jpg")
 
-if not os.path.isdir("downloads/"):
-    os.mkdir("downloads/")
-if not os.path.isdir("downloads/"):
-    os.mkdir("downloads/")
+if not os.path.isdir("encode/"):
+    os.mkdir("encode/")
+if not os.path.isdir("encode/"):
+    os.mkdir("encode/")
 if not os.path.isdir("thumb/"):
     os.mkdir("thumb/")
 
@@ -168,8 +168,8 @@ async def skip(e):
             WORKING.clear()
             QUEUE.pop(int(id))
         await e.delete()
-        os.system("rm -rf downloads/*")
-        os.system("rm -rf downloads/*")
+        os.system("rm -rf encode/*")
+        os.system("rm -rf encode/*")
 #        os.remove(dl)
 #        os.remove(out)
         for proc in psutil.process_iter(): #Lets kill ffmpeg else it will run in memory even after deleting input.
@@ -189,8 +189,8 @@ async def renew(e):
     await e.reply("**Cleared Queued, Working Files and Cached Downloads!😙❤️**")
     WORKING.clear()
     QUEUE.clear()
-    os.system("rm -rf downloads/*")
-    os.system("rm -rf downloads/*")
+    os.system("rm -rf encode/*")
+    os.system("rm -rf encode/*")
     for proc in psutil.process_iter():
         processName = proc.name()
         processID = proc.pid
@@ -241,7 +241,7 @@ async def fast_download(e, download_url, filename=None):
         async with session.get(download_url, timeout=None) as response:
             if not filename:
                 filename = download_url.rpartition("/")[-1]
-            filename = os.path.join("downloads", filename)
+            filename = os.path.join("encode", filename)
             total_size = int(response.headers.get("content-length", 0)) or None
             downloaded_size = 0
             with open(filename, "wb") as f:
