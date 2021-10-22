@@ -63,7 +63,7 @@ async def dl_link(event):
     es = dt.now()
     kk = dl.split("/")[-1]
     aa = kk.split(".")[-1]
-    rr = "downloads"
+    rr = "encode"
     bb = kk.replace(f".{aa}", " [HEVC].mkv")
     out = f"{rr}/{bb}"
     thum = "thumb.jpg"
@@ -171,7 +171,7 @@ async def encod(event):
         xxx = await event.reply("**Downloading...😙❤️**")
         s = dt.now()
         ttt = time.time()
-        dir = f"downloads/"
+        dir = f"encode/"
         try:
             if hasattr(event.media, "document"):
                 file = event.media.document
@@ -209,7 +209,7 @@ async def encod(event):
         es = dt.now()
         kk = dl.split("/")[-1]
         aa = kk.split(".")[-1]
-        rr = f"downloads"
+        rr = f"encode"
         bb = kk.replace(f".{aa}", " [HEVC].mkv")
         out = f"{rr}/{bb}"
         thum = "thumb.jpg"
