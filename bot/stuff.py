@@ -15,7 +15,7 @@ async def up(event):
 
 async def start(event):
     await event.reply(
-        f"**Send me the video which you want to compress.**",
+        f"**Send me the video which you want to compress😗❤️**",
         buttons=[
             [Button.inline("HELP", data="ihelp")],
         ],
@@ -24,7 +24,7 @@ async def start(event):
 async def zylern(event):
     await event.reply(
         f"""
-**Available Commands 🤖**
+**Available Commands 😗❤️**
 
 /start - __Check Bot is Working Or Not__
 /setcode - __Set Custom FFMPEG Code__
