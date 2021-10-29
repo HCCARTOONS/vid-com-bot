@@ -141,7 +141,7 @@ async def something():
                     else:
                         dl, file = QUEUE[list(QUEUE.keys())[0]]
                         tt = time.time()
-                        dl = "encode/" + dl
+                        dl = "downloads/" + dl
                         with open(dl, "wb") as f:
                             ok = await download_file(
                                 client=bot,
@@ -164,8 +164,8 @@ async def something():
                 es = dt.now()
                 kk = dl.split("/")[-1]
                 aa = kk.split(".")[-1]
-                rr = "encode"
-                bb = kk.replace(f".{aa}", "[HEVC].mkv")
+                rr = "downloads"
+                bb = kk.replace(f".{aa}", " [HEVC].mkv")
                 out = f"{rr}/{bb}"
                 thum = "thumb.jpg"
                 dtime = ts(int((es - s).seconds) * 1000)
