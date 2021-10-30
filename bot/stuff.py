@@ -31,9 +31,6 @@ async def zylern(event):
 /help - __Get Detailed Help__
 /ping - __Check Ping__
 /sysinfo - __Get System Info__
-/leech - __Leech Links And Compress Video__
-/renew - __Clear Cached Downloads__
-/clear - __Clear Queued Files__
 /speed - __Do A SpeedTest__
 /eval - __Execute An Argument__
 /bash - __Run Bash Commands__
@@ -44,11 +41,11 @@ async def zylern(event):
 
 async def help(event):
     await event.reply(
-        f"""**To check current ffmpeg command you can use.**\n\n`/eval print(ffmpegcode[0])`\n\n**You can change your ffmpeg code by executing following commands.**\n\n**➩** `/eval ffmpegcode.clear()`\n\n**➩** `/setcode -preset fast -c:v libx265 -s 854x480 -x265-params 'bframes=8:psy-rd=1:ref=3:aq-mode=3:aq-strength=0.8:deblock=1,1' -metadata 'title=HEVCEncodes' -pix_fmt yuv420p -crf 29 -c:a libopus -b:a 32k -c:s copy -map 0 -ac 2  -ab 32k  -vbr 2 -level 3.1`\n\n**Do /cmds For More**"""
+        f"""**To check current ffmpeg command you can use.**\n\n`/eval print(ffmpegcode[0])`\n\n**You can change your ffmpeg code by executing following commands.**\n\n**➩** `/eval ffmpegcode.clear()`\n\n**➩** `/setcode -preset fast -c:v libx265 -x265-params 'bframes=8:psy-rd=1:ref=3:aq-mode=3:aq-strength=0.8:deblock=1,1' -metadata 'title=HEVCEncodes' -pix_fmt yuv420p -crf 29 -c:a libopus -b:a 32k -c:s copy -map 0 -ac 2  -ab 32k  -vbr 2 -level 3.1`\n\n**Do /cmds For More**"""
     )
 
 
 async def ihelp(event):
     await event.edit(
-        """**To check current ffmpeg command you can use.**\n\n`/eval print(ffmpegcode[0])`\n\n**You can change your ffmpeg code by executing following commands.**\n\n**➩** `/eval ffmpegcode.clear()`\n\n**➩** `/setcode -preset fast -c:v libx265 -s 854x480 -x265-params 'bframes=8:psy-rd=1:ref=3:aq-mode=3:aq-strength=0.8:deblock=1,1' -metadata 'title=HEVCEncodes' -pix_fmt yuv420p -crf 29 -c:a libopus -b:a 32k -c:s copy -map 0 -ac 2  -ab 32k  -vbr 2 -level 3.1`\n\n**Do /cmds For More**"""
+        """**To check current ffmpeg command you can use.**\n\n`/eval print(ffmpegcode[0])`\n\n**You can change your ffmpeg code by executing following commands.**\n\n**➩** `/eval ffmpegcode.clear()`\n\n**➩** `/setcode -preset fast -c:v libx265 -x265-params 'bframes=8:psy-rd=1:ref=3:aq-mode=3:aq-strength=0.8:deblock=1,1' -metadata 'title=HEVCEncodes' -pix_fmt yuv420p -crf 29 -c:a libopus -b:a 32k -c:s copy -map 0 -ac 2  -ab 32k  -vbr 2 -level 3.1`\n\n**Do /cmds For More**"""
     )
