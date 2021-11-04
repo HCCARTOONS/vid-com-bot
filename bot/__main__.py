@@ -141,7 +141,7 @@ async def something():
                     else:
                         dl, file = QUEUE[list(QUEUE.keys())[0]]
                         tt = time.time()
-                        dl = "encode/" + dl
+                        dl = "downloads/" + dl
                         with open(dl, "wb") as f:
                             ok = await download_file(
                                 client=bot,
@@ -164,7 +164,7 @@ async def something():
                 es = dt.now()
                 kk = dl.split("/")[-1]
                 aa = kk.split(".")[-1]
-                rr = "encode"
+                rr = "downloads"
                 bb = kk.replace(f".{aa}", " [HEVC].mkv")
                 out = f"{rr}/{bb}"
                 thum = "thumb.jpg"
@@ -178,7 +178,7 @@ async def something():
                         [Button.inline("CANCEL", data=f"skip{wah}")],
                     ],
                 )
-                ffmpegcode.append("-preset fast -c:v libx265 -265-params 'bframes=8:psy-rd=1:ref=3:aq-mode=3:aq-strength=0.8:deblock=1,1' -pix_fmt yuv420p -crf 29 -c:a libopus -b:a 32k -c:s copy -map 0 -ac 2  -ab 32k  -vbr 2 -level 3.1")
+                ffmpegcode.append("-preset fast -c:v libx265 -s 854x480 -265-params 'bframes=8:psy-rd=1:ref=3:aq-mode=3:aq-strength=0.8:deblock=1,1' -pix_fmt yuv420p -crf 29 -c:a libopus -b:a 32k -c:s copy -map 0 -ac 2  -ab 32k  -vbr 2 -level 3.1")
                 cmd = f"""ffmpeg -i '{dl}' {ffmpegcode[0]} '{out}' -y"""
                 process = await asyncio.create_subprocess_shell(
                     cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
