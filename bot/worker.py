@@ -120,7 +120,7 @@ async def dl_link(event):
     a1 = await info(dl, xxx)
     a2 = await info(out, xxx)
     dk = await ds.reply(
-        f"**●Original File Size :** {hbs(org)}\n**●Compressed File Size :** {hbs(com)}\n**●Compressed File Percentage :** {per}\n\n**●Get Mediainfo here :** [Before]({a1})/[After]({a2})\n\n●Downloaded in : {x}\n●Compressed in : {xx}\n●Uploaded in : {xxx}",
+        f"**●Original File Size :** {hbs(org)}\n**●Compressed File Size :** {hbs(com)}\n**●Compressed File Percentage :** {per}\n\n**●Get Mediainfo here :** [Before]({a1})/[After]({a2})\n\n●Downloaded in : {x}\n●Compressed in : {xx}\n●Uploaded in : {xxx}\n\nDone #compress #480p",
         link_preview=False,
     )
     os.remove(dl)
@@ -267,7 +267,7 @@ async def encod(event):
         a1 = await info(dl, e)
         a2 = await info(out, e)
         dk = await ds.reply(
-            f"**●Original File Size :** {hbs(org)}\n**●Compressed File Size :** {hbs(com)}\n**●Compressed File Percentage :** {per}\n\n**●Get Mediainfo here :** [Before]({a1})/[After]({a2})\n\n●Downloaded in : {x}\n●Compressed in : {xx}\n●Uploaded in : {xxx}",
+            f"**●Original File Size :** {hbs(org)}\n**●Compressed File Size :** {hbs(com)}\n**●Compressed File Percentage :** {per}\n\n**●Get Mediainfo here :** [Before]({a1})/[After]({a2})\n\n●Downloaded in : {x}\n●Compressed in : {xx}\n●Uploaded in : {xxx}\n\nDone #compress #480p",
             link_preview=False,
         )
         os.remove(dl)
