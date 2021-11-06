@@ -141,7 +141,7 @@ async def something():
                     else:
                         dl, file = QUEUE[list(QUEUE.keys())[0]]
                         tt = time.time()
-                        dl = "downloads/" + dl
+                        dl = "encode/" + dl
                         with open(dl, "wb") as f:
                             ok = await download_file(
                                 client=bot,
@@ -164,7 +164,7 @@ async def something():
                 es = dt.now()
                 kk = dl.split("/")[-1]
                 aa = kk.split(".")[-1]
-                rr = "downloads"
+                rr = "encode"
                 bb = kk.replace(f".{aa}", " [HEVC].mkv")
                 out = f"{rr}/{bb}"
                 thum = "thumb.jpg"
@@ -222,7 +222,7 @@ async def something():
                 a1 = await info(dl, e)
                 a2 = await info(out, e)
                 dk = await ds.reply(
-                    f"**●Original File Size :** {hbs(org)}\n**●Compressed File Size :** {hbs(com)}\n**●Compressed File Percentage :** {per}\n\n**●Get Mediainfo here :** [Before]({a1})/[After]({a2})\n\n●Downloaded in : {x}\n●Compressed in : {xx}\n●Uploaded in : {xxx}",
+                    f"**●Original File Size :** {hbs(org)}\n**●Compressed File Size :** {hbs(com)}\n**●Compressed File Percentage :** {per}\n\n**●Get Mediainfo here :** [Before]({a1})/[After]({a2})\n\n●Downloaded in : {x}\n●Compressed in : {xx}\n●Uploaded in : {xxx}\n\nDone #compress #480p",
                     link_preview=False,
                 )
                 QUEUE.pop(list(QUEUE.keys())[0])
