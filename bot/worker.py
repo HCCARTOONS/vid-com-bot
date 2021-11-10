@@ -102,7 +102,7 @@ async def dl_link(event):
             file=f,
             name=out,
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                progress(d, t, nnn, ttt, "**Uploading...😙❤️**")
+                progress(d, t, nnn, ttt, "🥳")
             ),
         )
     ds = await xxx.client.send_file(
@@ -249,7 +249,7 @@ async def encod(event):
                 file=f,
                 name=out,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, nnn, ttt, "**Uploading...😙❤️**")
+                    progress(d, t, nnn, ttt, "😘")
                 ),
             )
         ds = await e.client.send_file(
