@@ -204,7 +204,7 @@ async def something():
                         file=f,
                         name=out,
                         progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                            progress(d, t, nnn, ttt, "🥳")
+                            progress(d, t, nnn, ttt, "**Uploading...😙❤️**")
                         ),
                     )
                 ds = await e.client.send_file(
